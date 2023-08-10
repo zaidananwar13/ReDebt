@@ -7,18 +7,60 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0654726629DBE13F00A25718 /* NewTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0654726529DBE13F00A25718 /* NewTransactionView.swift */; };
+		722DF7CC29E3C7E400CE7A77 /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722DF7C229E3C7E400CE7A77 /* Person+CoreDataClass.swift */; };
+		722DF7CD29E3C7E400CE7A77 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722DF7C329E3C7E400CE7A77 /* Person+CoreDataProperties.swift */; };
+		722DF7CE29E3C7E400CE7A77 /* Transaction+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722DF7C429E3C7E400CE7A77 /* Transaction+CoreDataProperties.swift */; };
+		722DF7CF29E3C7E400CE7A77 /* Hutang.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 722DF7C529E3C7E400CE7A77 /* Hutang.xcdatamodeld */; };
+		722DF7D029E3C7E400CE7A77 /* Transaction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722DF7C729E3C7E400CE7A77 /* Transaction+CoreDataClass.swift */; };
+		722DF7D129E3C7E400CE7A77 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722DF7C829E3C7E400CE7A77 /* PersistenceController.swift */; };
+		722DF7D229E3C7E400CE7A77 /* MainViewEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722DF7C929E3C7E400CE7A77 /* MainViewEx.swift */; };
+		724B241829ED0AE800BF88F3 /* MainViewX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724B241729ED0AE800BF88F3 /* MainViewX.swift */; };
+		727D5C3229ED48F600796451 /* FetchedPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727D5C3129ED48F600796451 /* FetchedPerson.swift */; };
+		729F093D29EC0A9200BE9DA8 /* DynamicFetchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729F093C29EC0A9200BE9DA8 /* DynamicFetchView.swift */; };
+		729F093F29EC0B0D00BE9DA8 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729F093E29EC0B0D00BE9DA8 /* DetailView.swift */; };
+		729F094129EC5BBE00BE9DA8 /* SettleDebt2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729F094029EC5BBE00BE9DA8 /* SettleDebt2.swift */; };
+		72DA04DB29E7CA1D0071EE7B /* DetailTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA04D829E7CA1D0071EE7B /* DetailTransactionView.swift */; };
+		72DA04DD29E7CA1D0071EE7B /* SettleDebt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA04DA29E7CA1D0071EE7B /* SettleDebt.swift */; };
+		72DA051F29E815D20071EE7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA051929E815D20071EE7B /* ViewController.swift */; };
+		72DA052029E815D20071EE7B /* BubbleNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA051A29E815D20071EE7B /* BubbleNode.swift */; };
+		72DA052129E815D20071EE7B /* SIFloatingCollectionScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA051B29E815D20071EE7B /* SIFloatingCollectionScene.swift */; };
+		72DA052229E815D20071EE7B /* BubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA051C29E815D20071EE7B /* BubbleView.swift */; };
+		72DA052329E815D20071EE7B /* SIFloatingNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA051D29E815D20071EE7B /* SIFloatingNode.swift */; };
+		72DA052429E815D20071EE7B /* BubblesScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA051E29E815D20071EE7B /* BubblesScene.swift */; };
+		72DA052829E817E00071EE7B /* AddTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA052729E817E00071EE7B /* AddTransactionView.swift */; };
 		8C337C6529DAB83200227860 /* FirstTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C337C6429DAB83200227860 /* FirstTimeView.swift */; };
 		8CCBFC6F29D6AD23006270E5 /* TuruDebtApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCBFC6E29D6AD23006270E5 /* TuruDebtApp.swift */; };
-		8CCBFC7129D6AD23006270E5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCBFC7029D6AD23006270E5 /* MainView.swift */; };
 		8CCBFC7329D6AD24006270E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CCBFC7229D6AD24006270E5 /* Assets.xcassets */; };
 		8CCBFC7629D6AD24006270E5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CCBFC7529D6AD24006270E5 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0654726529DBE13F00A25718 /* NewTransactionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTransactionView.swift; sourceTree = "<group>"; };
+		722DF7C229E3C7E400CE7A77 /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
+		722DF7C329E3C7E400CE7A77 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		722DF7C429E3C7E400CE7A77 /* Transaction+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		722DF7C629E3C7E400CE7A77 /* Hutang.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Hutang.xcdatamodel; sourceTree = "<group>"; };
+		722DF7C729E3C7E400CE7A77 /* Transaction+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataClass.swift"; sourceTree = "<group>"; };
+		722DF7C829E3C7E400CE7A77 /* PersistenceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		722DF7C929E3C7E400CE7A77 /* MainViewEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewEx.swift; sourceTree = "<group>"; };
+		724B241729ED0AE800BF88F3 /* MainViewX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewX.swift; sourceTree = "<group>"; };
+		727D5C3129ED48F600796451 /* FetchedPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedPerson.swift; sourceTree = "<group>"; };
+		729F093C29EC0A9200BE9DA8 /* DynamicFetchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicFetchView.swift; sourceTree = "<group>"; };
+		729F093E29EC0B0D00BE9DA8 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		729F094029EC5BBE00BE9DA8 /* SettleDebt2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettleDebt2.swift; sourceTree = "<group>"; };
+		72DA04D829E7CA1D0071EE7B /* DetailTransactionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTransactionView.swift; sourceTree = "<group>"; };
+		72DA04DA29E7CA1D0071EE7B /* SettleDebt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettleDebt.swift; sourceTree = "<group>"; };
+		72DA051929E815D20071EE7B /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		72DA051A29E815D20071EE7B /* BubbleNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleNode.swift; sourceTree = "<group>"; };
+		72DA051B29E815D20071EE7B /* SIFloatingCollectionScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SIFloatingCollectionScene.swift; sourceTree = "<group>"; };
+		72DA051C29E815D20071EE7B /* BubbleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleView.swift; sourceTree = "<group>"; };
+		72DA051D29E815D20071EE7B /* SIFloatingNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SIFloatingNode.swift; sourceTree = "<group>"; };
+		72DA051E29E815D20071EE7B /* BubblesScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubblesScene.swift; sourceTree = "<group>"; };
+		72DA052729E817E00071EE7B /* AddTransactionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTransactionView.swift; sourceTree = "<group>"; };
 		8C337C6429DAB83200227860 /* FirstTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTimeView.swift; sourceTree = "<group>"; };
 		8CCBFC6B29D6AD23006270E5 /* TuruDebt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuruDebt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CCBFC6E29D6AD23006270E5 /* TuruDebtApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuruDebtApp.swift; sourceTree = "<group>"; };
-		8CCBFC7029D6AD23006270E5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		8CCBFC7229D6AD24006270E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8CCBFC7529D6AD24006270E5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -34,6 +76,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		722DF7C129E3C7E400CE7A77 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				722DF7C829E3C7E400CE7A77 /* PersistenceController.swift */,
+				722DF7C229E3C7E400CE7A77 /* Person+CoreDataClass.swift */,
+				722DF7C329E3C7E400CE7A77 /* Person+CoreDataProperties.swift */,
+				722DF7C429E3C7E400CE7A77 /* Transaction+CoreDataProperties.swift */,
+				722DF7C729E3C7E400CE7A77 /* Transaction+CoreDataClass.swift */,
+				722DF7C529E3C7E400CE7A77 /* Hutang.xcdatamodeld */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		72DA051829E815D20071EE7B /* BubbleRecipes */ = {
+			isa = PBXGroup;
+			children = (
+				72DA051929E815D20071EE7B /* ViewController.swift */,
+				72DA051A29E815D20071EE7B /* BubbleNode.swift */,
+				72DA051B29E815D20071EE7B /* SIFloatingCollectionScene.swift */,
+				72DA051C29E815D20071EE7B /* BubbleView.swift */,
+				72DA051D29E815D20071EE7B /* SIFloatingNode.swift */,
+				72DA051E29E815D20071EE7B /* BubblesScene.swift */,
+			);
+			path = BubbleRecipes;
+			sourceTree = "<group>";
+		};
 		8CCBFC6229D6AD23006270E5 = {
 			isa = PBXGroup;
 			children = (
@@ -53,11 +121,22 @@
 		8CCBFC6D29D6AD23006270E5 /* TuruDebt */ = {
 			isa = PBXGroup;
 			children = (
+				72DA051829E815D20071EE7B /* BubbleRecipes */,
 				8CCBFC6E29D6AD23006270E5 /* TuruDebtApp.swift */,
-				8CCBFC7029D6AD23006270E5 /* MainView.swift */,
 				8C337C6429DAB83200227860 /* FirstTimeView.swift */,
+				722DF7C929E3C7E400CE7A77 /* MainViewEx.swift */,
+				0654726529DBE13F00A25718 /* NewTransactionView.swift */,
+				72DA04D829E7CA1D0071EE7B /* DetailTransactionView.swift */,
+				72DA04DA29E7CA1D0071EE7B /* SettleDebt.swift */,
+				72DA052729E817E00071EE7B /* AddTransactionView.swift */,
+				729F093C29EC0A9200BE9DA8 /* DynamicFetchView.swift */,
+				722DF7C129E3C7E400CE7A77 /* DataModel */,
 				8CCBFC7229D6AD24006270E5 /* Assets.xcassets */,
 				8CCBFC7429D6AD24006270E5 /* Preview Content */,
+				729F093E29EC0B0D00BE9DA8 /* DetailView.swift */,
+				729F094029EC5BBE00BE9DA8 /* SettleDebt2.swift */,
+				724B241729ED0AE800BF88F3 /* MainViewX.swift */,
+				727D5C3129ED48F600796451 /* FetchedPerson.swift */,
 			);
 			path = TuruDebt;
 			sourceTree = "<group>";
@@ -140,9 +219,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CCBFC7129D6AD23006270E5 /* MainView.swift in Sources */,
+				722DF7CE29E3C7E400CE7A77 /* Transaction+CoreDataProperties.swift in Sources */,
+				722DF7CC29E3C7E400CE7A77 /* Person+CoreDataClass.swift in Sources */,
+				729F093D29EC0A9200BE9DA8 /* DynamicFetchView.swift in Sources */,
+				72DA052029E815D20071EE7B /* BubbleNode.swift in Sources */,
+				72DA052129E815D20071EE7B /* SIFloatingCollectionScene.swift in Sources */,
+				729F093F29EC0B0D00BE9DA8 /* DetailView.swift in Sources */,
+				722DF7CD29E3C7E400CE7A77 /* Person+CoreDataProperties.swift in Sources */,
+				722DF7D029E3C7E400CE7A77 /* Transaction+CoreDataClass.swift in Sources */,
+				727D5C3229ED48F600796451 /* FetchedPerson.swift in Sources */,
+				72DA04DB29E7CA1D0071EE7B /* DetailTransactionView.swift in Sources */,
+				72DA052329E815D20071EE7B /* SIFloatingNode.swift in Sources */,
+				722DF7CF29E3C7E400CE7A77 /* Hutang.xcdatamodeld in Sources */,
+				72DA052829E817E00071EE7B /* AddTransactionView.swift in Sources */,
+				72DA052229E815D20071EE7B /* BubbleView.swift in Sources */,
+				72DA051F29E815D20071EE7B /* ViewController.swift in Sources */,
+				72DA04DD29E7CA1D0071EE7B /* SettleDebt.swift in Sources */,
+				722DF7D229E3C7E400CE7A77 /* MainViewEx.swift in Sources */,
 				8C337C6529DAB83200227860 /* FirstTimeView.swift in Sources */,
+				0654726629DBE13F00A25718 /* NewTransactionView.swift in Sources */,
+				724B241829ED0AE800BF88F3 /* MainViewX.swift in Sources */,
+				72DA052429E815D20071EE7B /* BubblesScene.swift in Sources */,
+				722DF7D129E3C7E400CE7A77 /* PersistenceController.swift in Sources */,
 				8CCBFC6F29D6AD23006270E5 /* TuruDebtApp.swift in Sources */,
+				729F094129EC5BBE00BE9DA8 /* SettleDebt2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +441,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		722DF7C529E3C7E400CE7A77 /* Hutang.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				722DF7C629E3C7E400CE7A77 /* Hutang.xcdatamodel */,
+			);
+			currentVersion = 722DF7C629E3C7E400CE7A77 /* Hutang.xcdatamodel */;
+			path = Hutang.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8CCBFC6329D6AD23006270E5 /* Project object */;
 }

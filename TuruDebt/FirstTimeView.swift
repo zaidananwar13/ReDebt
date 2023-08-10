@@ -20,6 +20,7 @@ extension Color {
 }
 
 struct FirstTimeView: View {
+    @Binding var firstTimer: Bool
     @State private var fadeAwayState = false
     @State private var onTapState = false
     @State private var firstRing = 1.0
@@ -113,15 +114,10 @@ struct FirstTimeView: View {
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     fadeAwayState = true
+                    firstTimer = true
                 }
 
             }
         }
-    }
-}
-
-struct FirstTimeView_Previews: PreviewProvider {
-    static var previews: some View {
-        FirstTimeView()
     }
 }
