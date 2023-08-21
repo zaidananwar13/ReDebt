@@ -18,8 +18,6 @@ excluded:
 - Pods
 - SwiftLint/Common/3rdPartyLib
 
-only_after_dot: true
-
 line_length:
     warning: 150
     error: 200

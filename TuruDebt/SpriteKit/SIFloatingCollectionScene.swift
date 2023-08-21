@@ -87,7 +87,7 @@ open class SIFloatingCollectionScene: SKScene {
                 self.removingStartedTime = nil
 
                 if let node = atPoint(touchPoint) as? SIFloatingNode {
-                    if let index = floatingNodes.index(of: node) {
+                    if let index = floatingNodes.firstIndex(of: node) {
                         removeFloatingNode(at: index)
                     }
                 }
@@ -112,13 +112,13 @@ open class SIFloatingCollectionScene: SKScene {
         if let touch = touches.first as UITouch? {
             let plin = touch.previousLocation(in: self)
             let lin = touch.location(in: self)
-            var dx = lin.x - plin.x
-            var dy = lin.y - plin.y
+            var distanceX = lin.x - plin.x
+            var distanceY = lin.y - plin.y
             let bevelDegree = sqrt(pow(lin.x, 2) + pow(lin.y, 2))
-            dx = bevelDegree == 0 ? 0 : (dx / bevelDegree)
-            dy = bevelDegree == 0 ? 0 : (dy / bevelDegree)
+            distanceX = bevelDegree == 0 ? 0 : (distanceX / bevelDegree)
+            distanceY = bevelDegree == 0 ? 0 : (distanceY / bevelDegree)
 
-            if dx == 0 && dy == 0 {
+            if distanceX == 0 && distanceY == 0 {
                 return
             } else if mode != .moving {
                 mode = .moving
@@ -128,16 +128,16 @@ open class SIFloatingCollectionScene: SKScene {
                 let width = node.frame.size.width / 2
                 let height = node.frame.size.height / 2
                 var direction = CGVector(
-                    dx: pushStrength * dx,
-                    dy: pushStrength * dy
+                    dx: pushStrength * distanceX,
+                    dy: pushStrength * distanceY
                 )
 
                 if restrictedToBounds {
-                    if !(-width...(size.width + width) ~= node.position.x) && (node.position.x * dx) > 0 {
+                    if !(-width...(size.width + width) ~= node.position.x) && (node.position.x * distanceX) > 0 {
                         direction.dx = 0
                     }
 
-                    if !(-height...(size.height + height) ~= node.position.y) && (node.position.y * dy) > 0 {
+                    if !(-height...(size.height + height) ~= node.position.y) && (node.position.y * distanceY) > 0 {
                         direction.dy = 0
                     }
                 }
@@ -166,7 +166,7 @@ open class SIFloatingCollectionScene: SKScene {
         node.physicsBody?.isDynamic = true
         node.state = node.previousState
 
-        if let index = floatingNodes.index(of: node) {
+        if let index = floatingNodes.firstIndex(of: node) {
             floatingDelegate?.floatingScene?(self, canceledRemovingOfFloatingNodeAt: index)
         }
     }
@@ -185,10 +185,8 @@ open class SIFloatingCollectionScene: SKScene {
     open func indexesOfSelectedNodes() -> [Int] {
         var indexes: [Int] = []
 
-        for (iteration, node) in floatingNodes.enumerated() {
-            if node.state == .selected {
-                indexes.append(iteration)
-            }
+        for (iteration, node) in floatingNodes.enumerated() where node.state == .selected {
+            indexes.append(iteration)
         }
         return indexes
     }
@@ -217,13 +215,13 @@ open class SIFloatingCollectionScene: SKScene {
         node.physicsBody?.isDynamic = false
         node.state = .removing
 
-        if let index = floatingNodes.index(of: node) {
+        if let index = floatingNodes.firstIndex(of: node) {
             floatingDelegate?.floatingScene?(self, startedRemovingOfFloatingNodeAt: index)
         }
     }
 
     private func updateState(of node: SIFloatingNode) {
-        if let index = floatingNodes.index(of: node) {
+        if let index = floatingNodes.firstIndex(of: node) {
             switch node.state {
             case .normal:
                 if shouldSelectNode(at: index) {

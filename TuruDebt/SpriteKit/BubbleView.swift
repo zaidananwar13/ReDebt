@@ -56,10 +56,8 @@ struct BubbleView: View {
             SpriteView(scene: bubbleScene)
                 .onChange(of: selectedName) { _ in
                     onSelectedBubble = true
-                    print("onchange")
                 }
                 .onAppear {
-                    print("onappear")
                     onFirstTimeView = true
 //                    if bubbleScene.children.count < 1 {
                         createScene()
@@ -69,7 +67,6 @@ struct BubbleView: View {
 //                    }
                 }
                 .onDisappear {
-                    print("disappear")
 //                    updateBubble()
 //                    createScene()
                 }
@@ -112,32 +109,21 @@ struct BubbleView: View {
     // MARK: Masukin datanya ke dalam variable array datas
     func updateBubble() {        var maxx = persons.map { $0.totalDebt }.max() ?? 0
         var minx = persons.map { $0.totalDebt }.min() ?? 0
-        var status = datas.isEmpty ? true : false
+        let status = datas.isEmpty ? true : false
 
         datas.removeAll()
 
-        for person in persons {
-            if person.totalDebt != 0 {
-                // need to change the value of min and max if min = max because x/0 is nan
-                if minx == maxx {
-                    minx = 50
-                    maxx = 150
-                }
-
-                let size = normalizeSize(xPosition: person.totalDebt, min: minx, max: maxx)
-                _ = print("[updateBubbble][size] \(normalizeSize(xPosition: person.totalDebt, min: minx, max: maxx))")
-
-                datas.append(DataItem(title: person.name ?? "no name", size: size, color: person.totalDebt < 0 ? Color(hex: 0xFF7090) : Color(hex: 0x8FCBFF)))
-
-                _ = print("[updateBubbble][normalizeSize][person.totalDebt] \(person.totalDebt)")
-                _ = print("[updateBubbble][normalizeSize][max] \(minx)")
-                _ = print("[updateBubbble][normalizeSize][min] \(maxx)")
+        for person in persons where person.totalDebt != 0 {
+            if minx == maxx {
+                minx = 50
+                maxx = 150
             }
-        }
-        _ = print("halo\(datas)")
 
-        print("[updateBubbble][datas.count]", datas.count)
-        print("[updateBubbble][currentDatas.count]", currentDatas.count)
+            let size = normalizeSize(xPosition: person.totalDebt, min: minx, max: maxx)
+            datas.append(
+                DataItem(title: person.name ?? "no name", size: size, color: person.totalDebt < 0 ? Color(hex: 0xFF7090) : Color(hex: 0x8FCBFF))
+            )
+        }
 
         var iteration = 0
         for data in datas {
@@ -160,8 +146,6 @@ struct BubbleView: View {
             currentDatas.append(DataItem(id: data.id, title: data.title, size: data.size, color: data.color, offset: data.offset))
             iteration += 1
         }
-
-        print("[updateBubbble][bubbleScene]", bubbleScene.children)
     }
 
     func createScene() {
@@ -174,7 +158,6 @@ struct BubbleView: View {
 
         bubbleScene.size = CGSize(width: 300, height: 550)
         bubbleScene.scaleMode = .aspectFill
-        print("[createScene][bubbleScene]", bubbleScene.children)
 
         updateBubble()
     }

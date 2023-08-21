@@ -169,8 +169,6 @@ struct NewTransactionView: View {
                     newPerson.id = UUID()
                     newPerson.name = name
 
-                    _ = print(newPerson)
-
                     PersistenceController.shared.saveContext()
                     addTransaction(person: newPerson)
                 }
@@ -194,7 +192,6 @@ struct NewTransactionView: View {
 
             person.addToTransactions(newTransaction)
             PersistenceController.shared.saveContext()
-            _ = print(newTransaction)
 
             dismiss()
         }

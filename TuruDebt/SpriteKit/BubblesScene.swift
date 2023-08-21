@@ -2,7 +2,7 @@ import SpriteKit
 
 extension CGFloat {
     public static func random() -> CGFloat {
-        let randomValue: CGFloat = CGFloat(Float(arc4random()) / Float(0xFFFFFFFF))
+        let randomValue: CGFloat = CGFloat(Float.random(in: 0..<100) / Float(0xFFFFFFFF))
         return randomValue
     }
 
@@ -130,7 +130,7 @@ class BubblesScene: SIFloatingCollectionScene {
 
     func actionForFloatingNode(_ node: SIFloatingNode!) -> SKAction {
         return SKAction.run { [unowned self] () -> Void in
-            if let index = self.floatingNodes.index(of: node) {
+            if let index = self.floatingNodes.firstIndex(of: node) {
                 self.removeFloatingNode(at: index)
 
                 if node.state == .selected {
