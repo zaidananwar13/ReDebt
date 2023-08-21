@@ -6,12 +6,10 @@
 //
 //
 
-import Foundation
 import CoreData
-
+import Foundation
 
 extension Transaction {
-
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Transaction> {
         return NSFetchRequest<Transaction>(entityName: "Transaction")
     }
@@ -20,21 +18,19 @@ extension Transaction {
     @NSManaged public var nominal: Double
     @NSManaged public var date: Date?
     @NSManaged public var person: Person?
-    
+
     public var unwrappedNote: String {
         note ?? "Unknown note"
     }
-    
+
     public var unwrappedNominal: Double {
-        nominal 
+        nominal
     }
-    
+
     public var unwrappedDate: Date {
         date ?? Date()
     }
-
 }
 
-extension Transaction : Identifiable {
-
+extension Transaction: Identifiable {
 }

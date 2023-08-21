@@ -5,8 +5,8 @@
 //  Created by Pahala Sihombing on 03/04/23.
 //
 
-import SwiftUI
 import CoreData
+import SwiftUI
 
 struct NewTransactionView: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -14,30 +14,30 @@ struct NewTransactionView: View {
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Person.name, ascending: false)], animation: .default)
     private var persons: FetchedResults<Person>
-    
+
     @State private var name: String = ""
     @State private var nominal: String = ""
     @State private var note: String = ""
     @State private var utang = false
-    
-    @State var bubbleScene: BubblesScene = BubblesScene()
-    
+
+    @State var bubbleScene = BubblesScene()
+
     enum Status: String, CaseIterable, Identifiable {
         case iOweYou, youOweMe
         var id: Self { self }
     }
     @State private var selectedStatus: Status = .iOweYou
-    
-    @State var showExistedNameAlert: Bool = false
-    
+
+    @State var showExistedNameAlert = false
+
     let gradientColors = [
         Color(hex: 0xFF7090),
         Color(hex: 0x8FCBFF)
     ]
-    
+
     var body: some View {
         VStack {
-            VStack{
+            VStack {
 //                VStack{
 //                    Text("Slide to back to Home")
 //                        .padding(.bottom,6)
@@ -56,8 +56,8 @@ struct NewTransactionView: View {
                 }
                 .padding(.bottom, 30)
                 .padding(.top)
-                
-                HStack{
+
+                HStack {
                     Text("Name")
                         .foregroundColor(.gray)
                     Spacer()
@@ -72,8 +72,8 @@ struct NewTransactionView: View {
                 .cornerRadius(10)
                 .shadow(color: .gray, radius: 4, x: 2, y: 2)
                 .padding(.bottom, 24.0)
-                
-                HStack{
+
+                HStack {
                     Text("Nominal")
                         .foregroundColor(.gray)
                     Spacer()
@@ -89,8 +89,8 @@ struct NewTransactionView: View {
                 .shadow(color: .gray, radius: 4, x: 2, y: 2)
                 .padding(.bottom, 24.0)
                 .keyboardType(.numberPad)
-                
-                HStack{
+
+                HStack {
                     Text("Note")
                         .foregroundColor(.gray)
                     Spacer()
@@ -105,17 +105,16 @@ struct NewTransactionView: View {
                 .cornerRadius(10)
                 .shadow(color: .gray, radius: 4, x: 2, y: 2)
                 .padding(.bottom, 24.0)
-                
             }
             .padding(.horizontal)
-            
-            VStack{
-                HStack{
+
+            VStack {
+                HStack {
                     Text("What are you?")
                         .foregroundColor(.gray)
                     Spacer()
                 }
-                HStack{
+                HStack {
                     Picker("Status", selection: $selectedStatus) {
                         Text("I Owe You \(name)").tag(Status.iOweYou)
                         Text("You Owe Me \(name)").tag(Status.youOweMe)
@@ -126,12 +125,10 @@ struct NewTransactionView: View {
                 Spacer()
             }
             .padding()
-            
+
             Button(action: {
                 print("Clicked")
                 addPerson()
-                
-                
             }, label: {
                 HStack {
                     Image(systemName: "paperplane.fill")
@@ -141,17 +138,16 @@ struct NewTransactionView: View {
             .foregroundColor(.white)
             .background(selectedStatus == Status.iOweYou ? Color(hex: 0xFF7090) : Color(hex: 0x8FCBFF))
             .cornerRadius(5)
-            .frame(height:25)
+            .frame(height: 25)
             .padding(0)
             .buttonStyle(.bordered)
             .disabled(self.nominal.isEmpty)
-            
         }
         .alert("Name Already Exist.", isPresented: $showExistedNameAlert) {
             Button("OK", role: .cancel) {}
         }
     }
-    
+
     private func addPerson() {
         withAnimation {
             // Search name is already exist or not
@@ -161,35 +157,31 @@ struct NewTransactionView: View {
 //            let _ = print("ini predicate: \(predicate)")
             request.predicate = predicate
             request.fetchLimit = 1
-            
-            do{
+
+            do {
                 let count = try viewContext.count(for: request)
-                if(count == 0){
+                if count >= 1 {
+                    print("match found")
+                    showExistedNameAlert.toggle()
+                } else {
                     print("no matches")
-                    let newPerson = Person(context:viewContext)
+                    let newPerson = Person(context: viewContext)
                     newPerson.id = UUID()
                     newPerson.name = name
 
-                    let _ = print(newPerson)
-                    
+                    _ = print(newPerson)
+
                     PersistenceController.shared.saveContext()
                     addTransaction(person: newPerson)
-                }
-                else{
-                    print("match found")
-                    showExistedNameAlert.toggle()
-                    
                 }
             } catch let error as NSError {
                 print("Could not fetch \(error), \(error.userInfo)")
             }
         }
-        
     }
-    
+
     private func addTransaction(person: Person) {
         withAnimation {
-            
             let newTransaction = Transaction(context: viewContext)
             newTransaction.date = Date()
             newTransaction.note = note
@@ -199,17 +191,14 @@ struct NewTransactionView: View {
                 newTransaction.nominal = Double(nominal)!
             }
             person.totalDebt = newTransaction.nominal
-            
+
             person.addToTransactions(newTransaction)
             PersistenceController.shared.saveContext()
-            let _ = print(newTransaction)
-            
-            
-            
+            _ = print(newTransaction)
+
             dismiss()
         }
     }
-
 }
 
 struct NewTransactionView_Previews: PreviewProvider {

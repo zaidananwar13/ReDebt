@@ -1,17 +1,19 @@
 //
-//  Person+CoreDataProperties.swift
+//  Person+CoreDataClass.swift
 //  uTang
 //
 //  Created by Fuad Fadlila Surenggana on 09/04/23.
 //
 //
 
-import Foundation
 import CoreData
+import Foundation
 
+@objc(Person)
+public class Person: NSManagedObject {
+}
 
 extension Person {
-
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Person> {
         return NSFetchRequest<Person>(entityName: "Person")
     }
@@ -20,24 +22,22 @@ extension Person {
     @NSManaged public var totalDebt: Double
     @NSManaged public var id: UUID?
     @NSManaged public var transactions: NSSet?
-    
+
     public var unwrappedName: String {
         name ?? "Unknown Name"
     }
-    
+
     public var transactionsArray: [Transaction] {
         let transactionSet = transactions as? Set<Transaction> ?? []
-        
+
         return transactionSet.sorted {
             $1.unwrappedDate < $0.unwrappedDate
         }
     }
-
 }
 
 // MARK: Generated accessors for transactions
 extension Person {
-
     @objc(addTransactionsObject:)
     @NSManaged public func addToTransactions(_ value: Transaction)
 
@@ -49,9 +49,7 @@ extension Person {
 
     @objc(removeTransactions:)
     @NSManaged public func removeFromTransactions(_ values: NSSet)
-
 }
 
-extension Person : Identifiable {
-
+extension Person: Identifiable {
 }

@@ -28,7 +28,7 @@ struct FirstTimeView: View {
     @State private var thirdRing = 1.0
     @State private var fourthRing = 1.0
     @State private var fifthRing = 1.0
-    
+
     let gradientColors = [
         Color(hex: 0xEE7991),
         Color(hex: 0xEE7991),
@@ -36,16 +36,16 @@ struct FirstTimeView: View {
         Color(hex: 0x9CC9FA),
         Color(hex: 0x9CC9FA)
     ]
-    
+
     var body: some View {
         VStack {
             HStack {
                 Text("Tap")
                     .foregroundColor(.pink)
-                
+
                 Text("to add New Transaction!")
             }
-            
+
             ZStack {
                 Circle()
                     .fill(
@@ -56,7 +56,7 @@ struct FirstTimeView: View {
                     )
                     .opacity(onTapState ? 0.2 : 1)
                     .scaleEffect(onTapState ? firstRing : 1)
-                
+
                 Circle()
                     .fill(
                         LinearGradient(
@@ -66,7 +66,7 @@ struct FirstTimeView: View {
                     )
                     .opacity(onTapState ? 0.2 : 0.0)
                     .scaleEffect(onTapState ? secondRing : 1)
-                
+
                 Circle()
                     .fill(
                         LinearGradient(
@@ -76,7 +76,7 @@ struct FirstTimeView: View {
                     )
                     .opacity(onTapState ? 0.4 : 0.0)
                     .scaleEffect(onTapState ? thirdRing : 0.5)
-                
+
                 Circle()
                     .fill(
                         LinearGradient(
@@ -86,7 +86,7 @@ struct FirstTimeView: View {
                     )
                     .opacity(onTapState ? 0.6 : 0.0)
                     .scaleEffect(onTapState ? fourthRing : 0.25)
-                
+
                 Circle()
                     .fill(
                         LinearGradient(
@@ -99,24 +99,22 @@ struct FirstTimeView: View {
             }
             .padding(10)
             .animation(.easeInOut, value: 5)
-                
         }
         .opacity(fadeAwayState ? 0 : 1)
         .onTapGesture {
             onTapState.toggle()
-            
+
             withAnimation(.easeInOut(duration: 1.7)) {
                 firstRing = 6
                 secondRing = 5
                 thirdRing = 4
                 fourthRing = 3
                 fifthRing = 2.575
-                
+
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     fadeAwayState = true
                     firstTimer = true
                 }
-
             }
         }
     }

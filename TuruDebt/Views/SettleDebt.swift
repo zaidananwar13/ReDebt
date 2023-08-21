@@ -10,27 +10,27 @@ import SwiftUI
 struct SettleDebt: View {
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.dismiss) var dismiss
-    
+
     @StateObject var person: Person
-    
+
     @State var nominal: String = ""
     @State var note: String = ""
-    @State var showSettleDebt : Bool =  false
-    
+    @State var showSettleDebt = false
+
     enum Status: String, CaseIterable, Identifiable {
         case pay, addMore
         var id: Self { self }
     }
     @State private var settleSelectedStatus: Status = .pay
-    
+
     var body: some View {
-        NavigationView{
+        NavigationView {
             ZStack {
-                VStack{
+                VStack {
                     Image("Brazuca Browsing")
                         .padding(.init(top: -80, leading: 150, bottom: 250, trailing: 0))
                 }
-                
+
                 VStack {
                     //                VStack{
                     //                    Button(action: {
@@ -43,15 +43,15 @@ struct SettleDebt: View {
                     //                            .padding(.init(top: 0, leading: 310, bottom: 0, trailing: 0))
                     //                    })
                     //                }
-                    
+
                     //                HStack{
                     //                    Text("\(person.name!)")
                     //                        .font(.title)
                     //                    Spacer()
                     //                }
                     //                .padding(.bottom)
-                    
-                    HStack{
+
+                    HStack {
                         Text("Nominal")
                             .foregroundColor(.gray)
                         Spacer()
@@ -67,8 +67,8 @@ struct SettleDebt: View {
                     .shadow(color: .gray, radius: 4, x: 2, y: 2)
                     .padding(.bottom, 24.0)
                     .keyboardType(.numberPad)
-                    
-                    HStack{
+
+                    HStack {
                         Text("Note")
                             .foregroundColor(.gray)
                         Spacer()
@@ -83,14 +83,14 @@ struct SettleDebt: View {
                     .cornerRadius(10)
                     .shadow(color: .gray, radius: 4, x: 2, y: 2)
                     .padding(.bottom, 24.0)
-                    
-                    VStack{
-                        HStack{
+
+                    VStack {
+                        HStack {
                             Text("What are you?")
                                 .foregroundColor(.gray)
                             Spacer()
                         }
-                        HStack{
+                        HStack {
                             Picker("Status", selection: $settleSelectedStatus) {
                                 Text("Pay Debt").tag(Status.pay)
                                 Text("Add more Debt").tag(Status.addMore)
@@ -100,7 +100,7 @@ struct SettleDebt: View {
                         }
                     }
                     .padding()
-                    
+
                     Button(action: {
                         print("Clicked")
                         addTransaction()
@@ -114,10 +114,10 @@ struct SettleDebt: View {
                     .foregroundColor(.white)
                     .background(settleSelectedStatus == Status.addMore ? Color(hex: 0xFF7090) : Color(hex: 0x8FCBFF))
                     .cornerRadius(5)
-                    .frame(height:25)
+                    .frame(height: 25)
                     .padding(0)
                     .buttonStyle(.bordered)
-                    
+
                     .navigationTitle("Settle Debt")
                     .navigationBarItems(trailing: Button("Dismiss", action: {
                         self.dismiss()
@@ -125,14 +125,10 @@ struct SettleDebt: View {
                 }
                 .padding(.horizontal)
             }
-            
-            
-            
         }
     }
-    
+
     private func addTransaction() {
-        
         withAnimation {
             let newTransaction = Transaction(context: viewContext)
             newTransaction.date = Date()
@@ -143,12 +139,12 @@ struct SettleDebt: View {
                 newTransaction.nominal = Double(nominal)!
             }
             person.totalDebt = totalDebt(transaction: person.transactionsArray) + newTransaction.nominal
-            
+
             person.addToTransactions(newTransaction)
             PersistenceController.shared.saveContext()
         }
     }
-    
+
     func totalDebt(transaction: [Transaction]) -> Double {
         var debt: Double = 0
         for item in transaction {
@@ -157,8 +153,8 @@ struct SettleDebt: View {
         return debt
     }
 }
-//struct SettleDebt_Previews: PreviewProvider {
+// struct SettleDebt_Previews: PreviewProvider {
 //    static var previews: some View {
 //        SettleDebt()
 //    }
-//}
+// }
