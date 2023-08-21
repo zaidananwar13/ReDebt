@@ -9,9 +9,17 @@ import SwiftUI
 
 @main
 struct TuruDebtApp: App {
+<<<<<<< Updated upstream
     var body: some Scene {
         WindowGroup {
             ContentView()
+=======
+    let persistenceController = PersistenceController.shared
+    var body: some Scene {
+        WindowGroup {
+            MainView()
+                .environment(\.managedObjectContext, persistenceController.viewContext)
+>>>>>>> Stashed changes
         }
     }
 }
