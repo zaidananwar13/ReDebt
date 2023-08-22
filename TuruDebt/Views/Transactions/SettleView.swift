@@ -8,7 +8,7 @@
 import CoreData
 import SwiftUI
 
-struct SettleDebt2: View {
+struct SettleView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.dismiss) var dismiss
 
@@ -86,7 +86,6 @@ struct SettleDebt2: View {
                             .padding()
 
                             Button(action: {
-                                print("Clicked")
                                 addTransaction(person: person)
                                 dismiss()
                             }, label: {

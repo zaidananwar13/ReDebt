@@ -24,7 +24,7 @@ struct BubbleView: View {
 
     var body: some View {
         if persons.count < 1 {
-            FirstTimeView(firstTimer: $onFirstTimeView)
+            OnBoardingView(firstTimer: $onFirstTimeView)
                 .onAppear {
                     onFirstTimeView = false
                 }
@@ -92,7 +92,6 @@ struct BubbleView: View {
     }
 
     func normalizeSize(xPosition: Double, min: Double, max: Double) -> Double {
-        print(min)
         return map(minRange: abs(min), maxRange: abs(max), minDomain: 50, maxDomain: 150, value: abs(xPosition))
     }
     
@@ -118,14 +117,9 @@ struct BubbleView: View {
         var iteration = 0
         for data in datas {
             if !currentDatas.isEmpty {
-                print("[updateBubbble][currentDatas]", currentDatas)
                 let isDuplicate = currentDatas.contains(where: {
-                    print("[updateBubbble][$0.id]", $0.title)
-                    print("[updateBubbble][dataId]", data.title)
-
                     return $0.title == data.title
                 })
-                print("[updateBubbble][isDuplicate]", isDuplicate)
                 if isDuplicate {
                     continue
                 }

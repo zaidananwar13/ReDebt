@@ -1,16 +1,5 @@
 import SpriteKit
 
-extension CGFloat {
-    public static func random() -> CGFloat {
-        let randomValue: CGFloat = CGFloat(Float.random(in: 0..<100) / Float(0xFFFFFFFF))
-        return randomValue
-    }
-
-    public static func random(min: CGFloat, max: CGFloat) -> CGFloat {
-        return CGFloat.random() * (max - min) + min
-    }
-}
-
 class BubblesScene: SKFloatingCollectionScene {
     var bottomOffset: CGFloat = 200
     var topOffset: CGFloat = 0

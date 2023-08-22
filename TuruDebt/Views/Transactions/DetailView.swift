@@ -47,7 +47,6 @@ struct DetailView: View {
                             .fontWeight(.regular)
                             .padding(.vertical, 16.0)
                         Button(action: {
-                            print("clicked")
                             showingAddview.toggle()
                         }, label: {
                             Text("Settle Your Debt")
@@ -114,7 +113,7 @@ struct DetailView: View {
                 }
                 .navigationBarHidden(false)
                 .sheet(isPresented: $showingAddview) {
-                    SettleDebt2(targetPerson: $targetPerson)
+                    SettleView(targetPerson: $targetPerson)
                         .presentationDetents([.fraction(0.7)])
                 }
             }

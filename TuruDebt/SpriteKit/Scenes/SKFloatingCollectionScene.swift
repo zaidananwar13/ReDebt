@@ -1,11 +1,5 @@
 import SpriteKit
 
-extension CGPoint {
-    func distance(from point: CGPoint) -> CGFloat {
-        return hypot(point.x - self.x, point.y - self.y)
-    }
-}
-
 @objc public protocol SKFloatingCollectionSceneDelegate {
     @objc optional func floatingScene(_ scene: SKFloatingCollectionScene, shouldSelectFloatingNodeAt index: Int) -> Bool
     @objc optional func floatingScene(_ scene: SKFloatingCollectionScene, didSelectFloatingNodeAt index: Int)

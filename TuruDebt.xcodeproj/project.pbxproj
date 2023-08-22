@@ -16,16 +16,17 @@
 		724B241829ED0AE800BF88F3 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724B241729ED0AE800BF88F3 /* MainView.swift */; };
 		729F093D29EC0A9200BE9DA8 /* DynamicFetchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729F093C29EC0A9200BE9DA8 /* DynamicFetchView.swift */; };
 		729F093F29EC0B0D00BE9DA8 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729F093E29EC0B0D00BE9DA8 /* DetailView.swift */; };
-		729F094129EC5BBE00BE9DA8 /* SettleDebt2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729F094029EC5BBE00BE9DA8 /* SettleDebt2.swift */; };
-		72DA04DB29E7CA1D0071EE7B /* DetailTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA04D829E7CA1D0071EE7B /* DetailTransactionView.swift */; };
+		729F094129EC5BBE00BE9DA8 /* SettleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729F094029EC5BBE00BE9DA8 /* SettleView.swift */; };
 		72DA052029E815D20071EE7B /* BubbleNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA051A29E815D20071EE7B /* BubbleNode.swift */; };
 		72DA052129E815D20071EE7B /* SKFloatingCollectionScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA051B29E815D20071EE7B /* SKFloatingCollectionScene.swift */; };
 		72DA052229E815D20071EE7B /* BubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA051C29E815D20071EE7B /* BubbleView.swift */; };
 		72DA052329E815D20071EE7B /* SKFloatingNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA051D29E815D20071EE7B /* SKFloatingNode.swift */; };
 		72DA052429E815D20071EE7B /* BubblesScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA051E29E815D20071EE7B /* BubblesScene.swift */; };
 		72DA052829E817E00071EE7B /* AddTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DA052729E817E00071EE7B /* AddTransactionView.swift */; };
-		8C2F5A5E2A936A0D003346B0 /* SettleDebt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2F5A5D2A936A0D003346B0 /* SettleDebt.swift */; };
-		8C337C6529DAB83200227860 /* FirstTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C337C6429DAB83200227860 /* FirstTimeView.swift */; };
+		8C2F5A662A944E49003346B0 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2F5A652A944E49003346B0 /* Color+Extension.swift */; };
+		8C2F5A682A944E9D003346B0 /* CGFloat+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2F5A672A944E9D003346B0 /* CGFloat+Extension.swift */; };
+		8C2F5A6A2A944F60003346B0 /* CGPoint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2F5A692A944F60003346B0 /* CGPoint+Extension.swift */; };
+		8C337C6529DAB83200227860 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C337C6429DAB83200227860 /* OnBoardingView.swift */; };
 		8CCBFC6F29D6AD23006270E5 /* TuruDebtApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCBFC6E29D6AD23006270E5 /* TuruDebtApp.swift */; };
 		8CCBFC7329D6AD24006270E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CCBFC7229D6AD24006270E5 /* Assets.xcassets */; };
 		8CCBFC7629D6AD24006270E5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CCBFC7529D6AD24006270E5 /* Preview Assets.xcassets */; };
@@ -42,16 +43,17 @@
 		724B241729ED0AE800BF88F3 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		729F093C29EC0A9200BE9DA8 /* DynamicFetchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicFetchView.swift; sourceTree = "<group>"; };
 		729F093E29EC0B0D00BE9DA8 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-		729F094029EC5BBE00BE9DA8 /* SettleDebt2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettleDebt2.swift; sourceTree = "<group>"; };
-		72DA04D829E7CA1D0071EE7B /* DetailTransactionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTransactionView.swift; sourceTree = "<group>"; };
+		729F094029EC5BBE00BE9DA8 /* SettleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettleView.swift; sourceTree = "<group>"; };
 		72DA051A29E815D20071EE7B /* BubbleNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleNode.swift; sourceTree = "<group>"; };
 		72DA051B29E815D20071EE7B /* SKFloatingCollectionScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKFloatingCollectionScene.swift; sourceTree = "<group>"; };
 		72DA051C29E815D20071EE7B /* BubbleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleView.swift; sourceTree = "<group>"; };
 		72DA051D29E815D20071EE7B /* SKFloatingNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKFloatingNode.swift; sourceTree = "<group>"; };
 		72DA051E29E815D20071EE7B /* BubblesScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubblesScene.swift; sourceTree = "<group>"; };
 		72DA052729E817E00071EE7B /* AddTransactionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTransactionView.swift; sourceTree = "<group>"; };
-		8C2F5A5D2A936A0D003346B0 /* SettleDebt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettleDebt.swift; sourceTree = "<group>"; };
-		8C337C6429DAB83200227860 /* FirstTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTimeView.swift; sourceTree = "<group>"; };
+		8C2F5A652A944E49003346B0 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		8C2F5A672A944E9D003346B0 /* CGFloat+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extension.swift"; sourceTree = "<group>"; };
+		8C2F5A692A944F60003346B0 /* CGPoint+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extension.swift"; sourceTree = "<group>"; };
+		8C337C6429DAB83200227860 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		8CCBFC6B29D6AD23006270E5 /* TuruDebt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuruDebt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CCBFC6E29D6AD23006270E5 /* TuruDebtApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuruDebtApp.swift; sourceTree = "<group>"; };
 		8CCBFC7229D6AD24006270E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -109,6 +111,44 @@
 			path = Nodes;
 			sourceTree = "<group>";
 		};
+		8C2F5A632A944D21003346B0 /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				729F093C29EC0A9200BE9DA8 /* DynamicFetchView.swift */,
+				729F093E29EC0B0D00BE9DA8 /* DetailView.swift */,
+				729F094029EC5BBE00BE9DA8 /* SettleView.swift */,
+				0654726529DBE13F00A25718 /* NewTransactionView.swift */,
+				72DA052729E817E00071EE7B /* AddTransactionView.swift */,
+			);
+			path = Transactions;
+			sourceTree = "<group>";
+		};
+		8C2F5A642A944DD9003346B0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8C2F5A672A944E9D003346B0 /* CGFloat+Extension.swift */,
+				8C2F5A692A944F60003346B0 /* CGPoint+Extension.swift */,
+				8C2F5A652A944E49003346B0 /* Color+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8C2F5A6C2A94557B003346B0 /* Bubbles */ = {
+			isa = PBXGroup;
+			children = (
+				72DA051C29E815D20071EE7B /* BubbleView.swift */,
+			);
+			name = Bubbles;
+			sourceTree = "<group>";
+		};
+		8C2F5A6D2A94558E003346B0 /* OnBoard */ = {
+			isa = PBXGroup;
+			children = (
+				8C337C6429DAB83200227860 /* OnBoardingView.swift */,
+			);
+			path = OnBoard;
+			sourceTree = "<group>";
+		};
 		8CCBFC6229D6AD23006270E5 = {
 			isa = PBXGroup;
 			children = (
@@ -129,9 +169,10 @@
 		8CCBFC6D29D6AD23006270E5 /* TuruDebt */ = {
 			isa = PBXGroup;
 			children = (
+				8C2F5A642A944DD9003346B0 /* Extensions */,
 				72DA051829E815D20071EE7B /* SpriteKit */,
-				8CEC796E2A92FAA600152760 /* Views */,
 				722DF7C129E3C7E400CE7A77 /* Models */,
+				8CEC796E2A92FAA600152760 /* Views */,
 				8CCBFC6E29D6AD23006270E5 /* TuruDebtApp.swift */,
 				8CCBFC7229D6AD24006270E5 /* Assets.xcassets */,
 				8CCBFC7429D6AD24006270E5 /* Preview Content */,
@@ -150,16 +191,10 @@
 		8CEC796E2A92FAA600152760 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				72DA051C29E815D20071EE7B /* BubbleView.swift */,
-				729F093E29EC0B0D00BE9DA8 /* DetailView.swift */,
-				729F094029EC5BBE00BE9DA8 /* SettleDebt2.swift */,
+				8C2F5A6D2A94558E003346B0 /* OnBoard */,
+				8C2F5A6C2A94557B003346B0 /* Bubbles */,
+				8C2F5A632A944D21003346B0 /* Transactions */,
 				724B241729ED0AE800BF88F3 /* MainView.swift */,
-				8C337C6429DAB83200227860 /* FirstTimeView.swift */,
-				0654726529DBE13F00A25718 /* NewTransactionView.swift */,
-				72DA04D829E7CA1D0071EE7B /* DetailTransactionView.swift */,
-				72DA052729E817E00071EE7B /* AddTransactionView.swift */,
-				729F093C29EC0A9200BE9DA8 /* DynamicFetchView.swift */,
-				8C2F5A5D2A936A0D003346B0 /* SettleDebt.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -259,25 +294,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				722DF7CE29E3C7E400CE7A77 /* Transaction+CoreDataProperties.swift in Sources */,
+				8C2F5A662A944E49003346B0 /* Color+Extension.swift in Sources */,
 				722DF7CC29E3C7E400CE7A77 /* Person+CoreDataClass.swift in Sources */,
 				729F093D29EC0A9200BE9DA8 /* DynamicFetchView.swift in Sources */,
 				72DA052029E815D20071EE7B /* BubbleNode.swift in Sources */,
 				72DA052129E815D20071EE7B /* SKFloatingCollectionScene.swift in Sources */,
+				8C2F5A682A944E9D003346B0 /* CGFloat+Extension.swift in Sources */,
 				729F093F29EC0B0D00BE9DA8 /* DetailView.swift in Sources */,
 				722DF7D029E3C7E400CE7A77 /* Transaction+CoreDataClass.swift in Sources */,
-				72DA04DB29E7CA1D0071EE7B /* DetailTransactionView.swift in Sources */,
 				72DA052329E815D20071EE7B /* SKFloatingNode.swift in Sources */,
 				722DF7CF29E3C7E400CE7A77 /* Hutang.xcdatamodeld in Sources */,
 				72DA052829E817E00071EE7B /* AddTransactionView.swift in Sources */,
 				72DA052229E815D20071EE7B /* BubbleView.swift in Sources */,
-				8C337C6529DAB83200227860 /* FirstTimeView.swift in Sources */,
-				8C2F5A5E2A936A0D003346B0 /* SettleDebt.swift in Sources */,
+				8C337C6529DAB83200227860 /* OnBoardingView.swift in Sources */,
 				0654726629DBE13F00A25718 /* NewTransactionView.swift in Sources */,
+				8C2F5A6A2A944F60003346B0 /* CGPoint+Extension.swift in Sources */,
 				724B241829ED0AE800BF88F3 /* MainView.swift in Sources */,
 				72DA052429E815D20071EE7B /* BubblesScene.swift in Sources */,
 				722DF7D129E3C7E400CE7A77 /* PersistenceController.swift in Sources */,
 				8CCBFC6F29D6AD23006270E5 /* TuruDebtApp.swift in Sources */,
-				729F094129EC5BBE00BE9DA8 /* SettleDebt2.swift in Sources */,
+				729F094129EC5BBE00BE9DA8 /* SettleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

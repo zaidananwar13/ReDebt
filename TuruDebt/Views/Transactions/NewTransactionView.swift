@@ -8,6 +8,12 @@
 import CoreData
 import SwiftUI
 
+
+enum Status: String, CaseIterable, Identifiable {
+    case iOweYou, youOweMe
+    var id: Self { self }
+}
+
 struct NewTransactionView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.dismiss) var dismiss
@@ -19,15 +25,8 @@ struct NewTransactionView: View {
     @State private var nominal: String = ""
     @State private var note: String = ""
     @State private var utang = false
-
     @State var bubbleScene = BubblesScene()
-
-    enum Status: String, CaseIterable, Identifiable {
-        case iOweYou, youOweMe
-        var id: Self { self }
-    }
     @State private var selectedStatus: Status = .iOweYou
-
     @State var showExistedNameAlert = false
 
     let gradientColors = [
@@ -120,7 +119,6 @@ struct NewTransactionView: View {
             .padding()
 
             Button(action: {
-                print("Clicked")
                 addPerson()
             }, label: {
                 HStack {
@@ -151,10 +149,8 @@ struct NewTransactionView: View {
             do {
                 let count = try viewContext.count(for: request)
                 if count >= 1 {
-                    print("match found")
                     showExistedNameAlert.toggle()
                 } else {
-                    print("no matches")
                     let newPerson = Person(context: viewContext)
                     newPerson.id = UUID()
                     newPerson.name = name
@@ -163,7 +159,7 @@ struct NewTransactionView: View {
                     addTransaction(person: newPerson)
                 }
             } catch let error as NSError {
-                print("Could not fetch \(error), \(error.userInfo)")
+                assertionFailure("Could not fetch \(error), \(error.userInfo)")
             }
         }
     }
@@ -185,11 +181,5 @@ struct NewTransactionView: View {
 
             dismiss()
         }
-    }
-}
-
-struct NewTransactionView_Previews: PreviewProvider {
-    static var previews: some View {
-        NewTransactionView()
     }
 }
