@@ -14,8 +14,6 @@ struct SettleDebt2: View {
 
     @Binding var targetPerson: String
 
-//    @StateObject var person: Person
-
     @State var nominal: String = ""
     @State var note: String = ""
     @State var showSettleDebt = false
@@ -37,25 +35,6 @@ struct SettleDebt2: View {
                         }
 
                         VStack {
-                            //                VStack{
-                            //                    Button(action: {
-                            //                        showSettleDebt.toggle()
-                            //                        dismiss()
-                            //                    }, label: {
-                            //                        Image(systemName: "xmark.circle")
-                            //                            .foregroundColor(Color(red: 0.9607843137254902, green: 0.4745098039215686, blue: 0.5686274509803921))
-                            //                            .font(.largeTitle)
-                            //                            .padding(.init(top: 0, leading: 310, bottom: 0, trailing: 0))
-                            //                    })
-                            //                }
-
-                            //                HStack{
-                            //                    Text("\(person.name!)")
-                            //                        .font(.title)
-                            //                    Spacer()
-                            //                }
-                            //                .padding(.bottom)
-
                             HStack {
                                 Text("Nominal")
                                     .foregroundColor(.gray)
@@ -160,8 +139,3 @@ struct SettleDebt2: View {
         return debt
     }
 }
-// struct SettleDebt2_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SettleDebt2()
-//    }
-// }

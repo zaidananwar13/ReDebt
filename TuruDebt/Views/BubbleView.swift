@@ -59,16 +59,7 @@ struct BubbleView: View {
                 }
                 .onAppear {
                     onFirstTimeView = true
-//                    if bubbleScene.children.count < 1 {
-                        createScene()
-//                    }else {
-//                        updateBubble()
-////                        createScene()
-//                    }
-                }
-                .onDisappear {
-//                    updateBubble()
-//                    createScene()
+                    createScene()
                 }
 
             Spacer()
@@ -104,10 +95,9 @@ struct BubbleView: View {
         print(min)
         return map(minRange: abs(min), maxRange: abs(max), minDomain: 50, maxDomain: 150, value: abs(xPosition))
     }
-
-    // MARK: Update data dari coredata
-    // MARK: Masukin datanya ke dalam variable array datas
-    func updateBubble() {        var maxx = persons.map { $0.totalDebt }.max() ?? 0
+    
+    func updateBubble() {
+        var maxx = persons.map { $0.totalDebt }.max() ?? 0
         var minx = persons.map { $0.totalDebt }.min() ?? 0
         let status = datas.isEmpty ? true : false
 

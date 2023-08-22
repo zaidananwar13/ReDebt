@@ -47,7 +47,7 @@ struct AddTransactionView: View {
             }
         }
     }
-    // MARK: Add Transaction
+    
     func addTransaction() {
         withAnimation {
             let newTransaction = Transaction(context: viewContext)

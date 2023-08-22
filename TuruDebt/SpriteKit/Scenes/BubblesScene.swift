@@ -11,7 +11,7 @@ extension CGFloat {
     }
 }
 
-class BubblesScene: SIFloatingCollectionScene {
+class BubblesScene: SKFloatingCollectionScene {
     var bottomOffset: CGFloat = 200
     var topOffset: CGFloat = 0
 
@@ -81,7 +81,7 @@ class BubblesScene: SIFloatingCollectionScene {
             node.position = CGPoint(x: xPosition, y: yPosition)
         }
 
-        if let newNode = node as? SIFloatingNode {
+        if let newNode = node as? SKFloatingNode {
             configureNode(newNode)
             self.floatingNodes.append(newNode)
         }
@@ -120,15 +120,15 @@ class BubblesScene: SIFloatingCollectionScene {
         }
     }
 
-    func sortedFloatingNodes() -> [SIFloatingNode] {
-        return floatingNodes.sorted { (node: SIFloatingNode, nextNode: SIFloatingNode) -> Bool in
+    func sortedFloatingNodes() -> [SKFloatingNode] {
+        return floatingNodes.sorted { (node: SKFloatingNode, nextNode: SKFloatingNode) -> Bool in
             let distance = node.position.distance(from: magneticField.position)
             let nextDistance = nextNode.position.distance(from: magneticField.position)
             return distance < nextDistance && node.state != .selected
         }
     }
 
-    func actionForFloatingNode(_ node: SIFloatingNode!) -> SKAction {
+    func actionForFloatingNode(_ node: SKFloatingNode!) -> SKAction {
         return SKAction.run { [unowned self] () -> Void in
             if let index = self.floatingNodes.firstIndex(of: node) {
                 self.removeFloatingNode(at: index)

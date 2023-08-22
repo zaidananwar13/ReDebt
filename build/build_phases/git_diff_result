@@ -1,1 +1,8 @@
-TuruDebt/Views/FetchedPerson.swift
+TuruDebt/SpriteKit/Nodes/BubbleNode.swift
+TuruDebt/SpriteKit/Nodes/SKFloatingNode.swift
+TuruDebt/SpriteKit/Scenes/BubblesScene.swift
+TuruDebt/SpriteKit/Scenes/SKFloatingCollectionScene.swift
+TuruDebt/Views/BubbleView.swift
+TuruDebt/Views/MainView.swift
+TuruDebt/Views/MainViewEx.swift
+TuruDebt/Views/MainViewX.swift

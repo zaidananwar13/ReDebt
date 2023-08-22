@@ -6,34 +6,34 @@ extension CGPoint {
     }
 }
 
-@objc public protocol SIFloatingCollectionSceneDelegate {
-    @objc optional func floatingScene(_ scene: SIFloatingCollectionScene, shouldSelectFloatingNodeAt index: Int) -> Bool
-    @objc optional func floatingScene(_ scene: SIFloatingCollectionScene, didSelectFloatingNodeAt index: Int)
+@objc public protocol SKFloatingCollectionSceneDelegate {
+    @objc optional func floatingScene(_ scene: SKFloatingCollectionScene, shouldSelectFloatingNodeAt index: Int) -> Bool
+    @objc optional func floatingScene(_ scene: SKFloatingCollectionScene, didSelectFloatingNodeAt index: Int)
 
-    @objc optional func floatingScene(_ scene: SIFloatingCollectionScene, shouldDeselectFloatingNodeAt index: Int) -> Bool
-    @objc optional func floatingScene(_ scene: SIFloatingCollectionScene, didDeselectFloatingNodeAt index: Int)
+    @objc optional func floatingScene(_ scene: SKFloatingCollectionScene, shouldDeselectFloatingNodeAt index: Int) -> Bool
+    @objc optional func floatingScene(_ scene: SKFloatingCollectionScene, didDeselectFloatingNodeAt index: Int)
 
-    @objc optional func floatingScene(_ scene: SIFloatingCollectionScene, startedRemovingOfFloatingNodeAt index: Int)
-    @objc optional func floatingScene(_ scene: SIFloatingCollectionScene, canceledRemovingOfFloatingNodeAt index: Int)
+    @objc optional func floatingScene(_ scene: SKFloatingCollectionScene, startedRemovingOfFloatingNodeAt index: Int)
+    @objc optional func floatingScene(_ scene: SKFloatingCollectionScene, canceledRemovingOfFloatingNodeAt index: Int)
 
-    @objc optional func floatingScene(_ scene: SIFloatingCollectionScene, shouldRemoveFloatingNodeAt index: Int) -> Bool
-    @objc optional func floatingScene(_ scene: SIFloatingCollectionScene, didRemoveFloatingNodeAt index: Int)
+    @objc optional func floatingScene(_ scene: SKFloatingCollectionScene, shouldRemoveFloatingNodeAt index: Int) -> Bool
+    @objc optional func floatingScene(_ scene: SKFloatingCollectionScene, didRemoveFloatingNodeAt index: Int)
 }
 
-public enum SIFloatingCollectionSceneMode {
+public enum SKFloatingCollectionSceneMode {
     case normal
     case editing
     case moving
 }
 
-open class SIFloatingCollectionScene: SKScene {
+open class SKFloatingCollectionScene: SKScene {
     public private(set) var magneticField = SKFieldNode.radialGravityField()
-    private(set) var mode: SIFloatingCollectionSceneMode = .normal {
+    private(set) var mode: SKFloatingCollectionSceneMode = .normal {
         didSet {
             modeUpdated()
         }
     }
-    public var floatingNodes: [SIFloatingNode] = []
+    public var floatingNodes: [SKFloatingNode] = []
 
     private var touchPoint: CGPoint?
     private var touchStartedTime: TimeInterval?
@@ -46,7 +46,7 @@ open class SIFloatingCollectionScene: SKScene {
     open var restrictedToBounds = true
     open var pushStrength: CGFloat = 10_000
 
-    open weak var floatingDelegate: SIFloatingCollectionSceneDelegate?
+    open weak var floatingDelegate: SKFloatingCollectionSceneDelegate?
 
     override open func didMove(to view: SKView) {
         super.didMove(to: view)
@@ -75,7 +75,7 @@ open class SIFloatingCollectionScene: SKScene {
             if deltaTime >= timeToStartRemoving {
                 self.touchStartedTime = nil
 
-                if let node = atPoint(touchPoint) as? SIFloatingNode {
+                if let node = atPoint(touchPoint) as? SKFloatingNode {
                     removingStartedTime = currentTime
                     startRemovingNode(node)
                 }
@@ -86,7 +86,7 @@ open class SIFloatingCollectionScene: SKScene {
             if deltaTime >= timeToRemove {
                 self.removingStartedTime = nil
 
-                if let node = atPoint(touchPoint) as? SIFloatingNode {
+                if let node = atPoint(touchPoint) as? SKFloatingNode {
                     if let index = floatingNodes.firstIndex(of: node) {
                         removeFloatingNode(at: index)
                     }
@@ -148,7 +148,7 @@ open class SIFloatingCollectionScene: SKScene {
 
     override open func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if mode != .moving, let touchPoint {
-            if let node = atPoint(touchPoint) as? SIFloatingNode {
+            if let node = atPoint(touchPoint) as? SKFloatingNode {
                 updateState(of: node)
             }
         }
@@ -161,7 +161,7 @@ open class SIFloatingCollectionScene: SKScene {
 
     // MARK: -
     // MARK: Nodes Manipulation
-    private func cancelRemovingNode(_ node: SIFloatingNode!) {
+    private func cancelRemovingNode(_ node: SKFloatingNode!) {
         mode = .normal
         node.physicsBody?.isDynamic = true
         node.state = node.previousState
@@ -171,7 +171,7 @@ open class SIFloatingCollectionScene: SKScene {
         }
     }
 
-    open func floatingNode(at index: Int) -> SIFloatingNode? {
+    open func floatingNode(at index: Int) -> SKFloatingNode? {
         if 0..<floatingNodes.count ~= index {
             return floatingNodes[index]
         }
@@ -194,7 +194,7 @@ open class SIFloatingCollectionScene: SKScene {
     override open func atPoint(_ point: CGPoint) -> SKNode {
         var currentNode = super.atPoint(point)
 
-        while !(currentNode.parent is SKScene) && !(currentNode is SIFloatingNode)
+        while !(currentNode.parent is SKScene) && !(currentNode is SKFloatingNode)
             && (currentNode.parent != nil) && !currentNode.isUserInteractionEnabled {
                 currentNode = currentNode.parent!
         }
@@ -210,7 +210,7 @@ open class SIFloatingCollectionScene: SKScene {
         }
     }
 
-    private func startRemovingNode(_ node: SIFloatingNode) {
+    private func startRemovingNode(_ node: SKFloatingNode) {
         mode = .editing
         node.physicsBody?.isDynamic = false
         node.state = .removing
@@ -220,7 +220,7 @@ open class SIFloatingCollectionScene: SKScene {
         }
     }
 
-    private func updateState(of node: SIFloatingNode) {
+    private func updateState(of node: SKFloatingNode) {
         if let index = floatingNodes.firstIndex(of: node) {
             switch node.state {
             case .normal:
@@ -248,7 +248,7 @@ open class SIFloatingCollectionScene: SKScene {
     // MARK: -
     // MARK: Configuration
     override open func addChild(_ node: SKNode) {
-        if let newNode = node as? SIFloatingNode {
+        if let newNode = node as? SKFloatingNode {
             configureNode(newNode)
             floatingNodes.append(newNode)
         }
@@ -259,7 +259,7 @@ open class SIFloatingCollectionScene: SKScene {
     open func updateChild(_ node: SKNode, iteration: Int, status: Bool = false) {
         super.removeAllChildren()
 
-        let reeNode = node as? SIFloatingNode
+        let reeNode = node as? SKFloatingNode
         configureNode(reeNode)
         floatingNodes.append(reeNode!)
 
@@ -277,7 +277,7 @@ open class SIFloatingCollectionScene: SKScene {
         addChild(magneticField)
     }
 
-    func configureNode(_ node: SIFloatingNode!) {
+    func configureNode(_ node: SKFloatingNode!) {
         if node.physicsBody == nil {
             let path = node.path ?? CGMutablePath()
             node.physicsBody = SKPhysicsBody(polygonFrom: path)

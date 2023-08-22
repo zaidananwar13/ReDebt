@@ -38,13 +38,6 @@ struct NewTransactionView: View {
     var body: some View {
         VStack {
             VStack {
-//                VStack{
-//                    Text("Slide to back to Home")
-//                        .padding(.bottom,6)
-//                    Image(systemName: "chevron.down")
-//                }
-//                .padding(.top,25)
-//                .padding(.bottom,25)
                 HStack {
                     Text("Fill")
                         .font(.title)
@@ -150,11 +143,8 @@ struct NewTransactionView: View {
 
     private func addPerson() {
         withAnimation {
-            // Search name is already exist or not
             let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Person")
-//            let _ = print("ini request: \(request)")
             let predicate = NSPredicate(format: "name == %@", name)
-//            let _ = print("ini predicate: \(predicate)")
             request.predicate = predicate
             request.fetchLimit = 1
 

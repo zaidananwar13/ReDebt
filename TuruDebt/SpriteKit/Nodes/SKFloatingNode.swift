@@ -1,18 +1,18 @@
 import SpriteKit
 
-public enum SIFloatingNodeState {
+public enum SKFloatingNodeState {
     case normal
     case selected
     case removing
 }
 
-open class SIFloatingNode: SKShapeNode {
-    private(set) var previousState: SIFloatingNodeState = .normal
+open class SKFloatingNode: SKShapeNode {
+    private(set) var previousState: SKFloatingNodeState = .normal
     var data: DataItem?
 
     public var onTap: ((String) -> Void)?
 
-    public var state: SIFloatingNodeState = .normal {
+    public var state: SKFloatingNodeState = .normal {
         didSet {
             if state != oldValue {
                 previousState = oldValue
@@ -32,18 +32,18 @@ open class SIFloatingNode: SKShapeNode {
         switch state {
         case .normal:
             action = normalizeAnimation()
-            actionKey = SIFloatingNode.normalizeKey
+            actionKey = SKFloatingNode.normalizeKey
 
         case .selected:
             if let title = data?.title {
                 onTap?(title)
             }
             action = selectingAnimation()
-            actionKey = SIFloatingNode.selectingKey
+            actionKey = SKFloatingNode.selectingKey
 
         case .removing:
             action = removingAnimation()
-            actionKey = SIFloatingNode.removingKey
+            actionKey = SKFloatingNode.removingKey
         }
 
         if let action, let actionKey {

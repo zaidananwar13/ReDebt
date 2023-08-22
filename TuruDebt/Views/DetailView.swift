@@ -7,13 +7,6 @@
 
 import Foundation
 
-//
-//  ContentView.swift
-//  screen transaction turu app
-//
-//  Created by Pahala Sihombing on 31/03/23.
-//
-
 import SwiftUI
 
 struct DetailView: View {
@@ -26,21 +19,12 @@ struct DetailView: View {
         DynamicFetchView(predicate: NSPredicate(format: "name == %@", targetPerson), sortDescriptors: []) { (persons: FetchedResults<Person>) in
             ForEach(persons, id: \.self) { person in
                 VStack {
-                    //            HStack{
-                    //                Image(systemName: "arrow.left")
-                    //                Text("Debt Details")
-                    //                    .font(.body)
-                    //                    .fontWeight(.bold)
-                    //                Spacer()
-                    //            }
-                    //            .padding(.horizontal)
-
                     VStack {
                         Text("\(person.totalDebt < 0 ? "You Owe" : "Owes You")")
                             .font(.title3)
                             .fontWeight(.regular)
                             .foregroundColor(person.totalDebt < 0 ? Color(hex: 0xFF7090) : Color(hex: 0x8FCBFF))
-        //                    .padding(.top, 22.0)
+                        
                         Text("\(person.name!)")
                             .font(.title3)
                             .fontWeight(.regular)
@@ -123,9 +107,7 @@ struct DetailView: View {
                             .listRowSeparator(.hidden)
                             .cornerRadius(10.0)
                         }
-//                        .onDelete(perform: deleteTransaction)
                     }
-
                     .frame(maxWidth: .infinity)
                     .listStyle(.inset)
                     .scrollContentBackground(.hidden)

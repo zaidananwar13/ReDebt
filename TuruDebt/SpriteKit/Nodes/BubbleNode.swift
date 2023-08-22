@@ -1,7 +1,7 @@
 import Foundation
 import SpriteKit
 
-class BubbleNode: SIFloatingNode {
+class BubbleNode: SKFloatingNode {
     var labelNode = SKLabelNode(fontNamed: "")
     class func instantiate(data: DataItem) -> BubbleNode {
         let node = BubbleNode(circleOfRadius: data.size / 2)

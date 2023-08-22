@@ -20,7 +20,6 @@ struct DetailTransactionView: View {
                     .font(.title3)
                     .fontWeight(.regular)
                     .foregroundColor(totalDebt() < 0 ? Color(hex: 0xFF7090) : Color(hex: 0x8FCBFF))
-//                    .padding(.top, 22.0)
                 Text("\(person.name!)")
                     .font(.title3)
                     .fontWeight(.regular)
@@ -143,18 +142,6 @@ struct DetailTransactionView: View {
         }
     }
 }
-
-// extension Color {
-//    init(hex: UInt, alpha: Double = 1) {
-//        self.init(
-//            .sRGB,
-//            red: Double((hex >> 16) & 0xff) / 255,
-//            green: Double((hex >> 08) & 0xff) / 255,
-//            blue: Double((hex >> 00) & 0xff) / 255,
-//            opacity: alpha
-//        )
-//    }
-// }
 
 struct DetailTransactionView_Previews: PreviewProvider {
     static var previews: some View {
