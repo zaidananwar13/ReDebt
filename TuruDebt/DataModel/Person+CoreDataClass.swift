@@ -6,10 +6,9 @@
 //
 //
 
-import Foundation
 import CoreData
+import Foundation
 
 @objc(Person)
 public class Person: NSManagedObject {
-
 }

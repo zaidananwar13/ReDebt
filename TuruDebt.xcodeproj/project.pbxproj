@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0654726629DBE13F00A25718 /* NewTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0654726529DBE13F00A25718 /* NewTransactionView.swift */; };
+		06DBFD1F2A9375DA001CF751 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 06DBFD1E2A9375DA001CF751 /* .swiftlint.yml */; };
 		722DF7CC29E3C7E400CE7A77 /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722DF7C229E3C7E400CE7A77 /* Person+CoreDataClass.swift */; };
 		722DF7CD29E3C7E400CE7A77 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722DF7C329E3C7E400CE7A77 /* Person+CoreDataProperties.swift */; };
 		722DF7CE29E3C7E400CE7A77 /* Transaction+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722DF7C429E3C7E400CE7A77 /* Transaction+CoreDataProperties.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		0654726529DBE13F00A25718 /* NewTransactionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTransactionView.swift; sourceTree = "<group>"; };
+		06DBFD1E2A9375DA001CF751 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		722DF7C229E3C7E400CE7A77 /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
 		722DF7C329E3C7E400CE7A77 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		722DF7C429E3C7E400CE7A77 /* Transaction+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 		8CCBFC6229D6AD23006270E5 = {
 			isa = PBXGroup;
 			children = (
+				06DBFD1E2A9375DA001CF751 /* .swiftlint.yml */,
 				8CCBFC6D29D6AD23006270E5 /* TuruDebt */,
 				8CCBFC6C29D6AD23006270E5 /* Products */,
 			);
@@ -159,6 +162,7 @@
 				8CCBFC6729D6AD23006270E5 /* Sources */,
 				8CCBFC6829D6AD23006270E5 /* Frameworks */,
 				8CCBFC6929D6AD23006270E5 /* Resources */,
+				06DBFD202A9375FE001CF751 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -207,12 +211,33 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06DBFD1F2A9375DA001CF751 /* .swiftlint.yml in Resources */,
 				8CCBFC7629D6AD24006270E5 /* Preview Assets.xcassets in Resources */,
 				8CCBFC7329D6AD24006270E5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		06DBFD202A9375FE001CF751 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint; then\n    swiftlint —-fix && swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8CCBFC6729D6AD23006270E5 /* Sources */ = {

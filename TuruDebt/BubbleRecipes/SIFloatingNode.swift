@@ -7,12 +7,10 @@ public enum SIFloatingNodeState {
 }
 
 open class SIFloatingNode: SKShapeNode {
-    
     private(set) var previousState: SIFloatingNodeState = .normal
     var data: DataItem?
-    
     public var onTap: ((String) -> Void)?
-    
+
     public var state: SIFloatingNodeState = .normal {
         didSet {
             if state != oldValue {
@@ -21,15 +19,14 @@ open class SIFloatingNode: SKShapeNode {
             }
         }
     }
-    
     private static let removingKey = "action.removing"
     private static let selectingKey = "action.selecting"
     private static let normalizeKey = "action.normalize"
-    
+
     private func stateChanged() {
         var action: SKAction?
         var actionKey: String?
-        
+
         switch state {
         case .normal:
             action = normalizeAnimation()
@@ -44,13 +41,11 @@ open class SIFloatingNode: SKShapeNode {
             action = removingAnimation()
             actionKey = SIFloatingNode.removingKey
         }
-        
         if let action = action, let actionKey = actionKey {
             removeAction(forKey: actionKey)
             run(action, withKey: actionKey)
         }
     }
-    
     override open func removeFromParent() {
         if let action = removeAnimation() {
             run(action) {
@@ -60,7 +55,6 @@ open class SIFloatingNode: SKShapeNode {
             super.removeFromParent()
         }
     }
-    
     // MARK: -
     // MARK: Animations
     open func selectingAnimation() -> SKAction? {return nil}
